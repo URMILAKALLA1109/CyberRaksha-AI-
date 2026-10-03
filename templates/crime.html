@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ crime.title }} | CyberRaksha AI
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡️
+        </div>
+
+        <div>
+            <strong>
+                CyberRaksha <span>AI</span>
+            </strong>
+
+            <small>
+                Cyber Emergency Assistant
+            </small>
+        </div>
+
+    </div>
+
+
+    <a href="/" class="home-link">
+        ← Home
+    </a>
+
+</header>
+
+
+<main class="crime-page">
+
+    <!-- BACK -->
+
+    <a href="/" class="back-link">
+        ← Back to CyberRaksha
+    </a>
+
+
+    <!-- CRIME HEADER -->
+
+    <section class="crime-header">
+
+        <div class="crime-badge">
+            INCIDENT GUIDANCE
+        </div>
+
+        <h1>
+            {{ crime.icon }} {{ crime.title }}
+        </h1>
+
+        <p>
+            {{ crime.description }}
+        </p>
+
+    </section>
+
+
+    <!-- IMMEDIATE ACTIONS -->
+
+    <section class="crime-section">
+
+        <div class="section-heading">
+
+            <div class="section-icon">
+                ⚡
+            </div>
+
+            <div>
+
+                <h2>
+                    What You Should Do Now
+                </h2>
+
+                <p>
+                    Take these immediate actions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="guidance-list">
+
+            {% for action in crime.actions %}
+
+            <div class="guidance-card">
+
+                <div class="guidance-number">
+                    {{ loop.index }}
+                </div>
+
+                <div class="guidance-content">
+
+                    <p>
+                        {{ action }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- EVIDENCE -->
+
+    <section class="crime-section">
+
+        <div class="section-heading">
+
+            <div class="section-icon">
+                📁
+            </div>
+
+            <div>
+
+                <h2>
+                    Evidence You Should Preserve
+                </h2>
+
+                <p>
+                    Keep these details safe for reporting.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="evidence-grid">
+
+            {% for item in crime.evidence %}
+
+            <div class="evidence-card">
+
+                <div class="check-icon">
+                    ✓
+                </div>
+
+                <span>
+                    {{ item }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- EMERGENCY SECTION -->
+
+    <section class="emergency-action">
+
+        <div>
+
+            <span class="emergency-label">
+                CYBER EMERGENCY
+            </span>
+
+            <h2>
+                Need immediate help?
+            </h2>
+
+            <p>
+                If money has been lost or you are facing
+                an active cybercrime incident, contact the
+                cybercrime helpline and use the official
+                reporting channel.
+            </p>
+
+        </div>
+
+
+        <div class="emergency-buttons">
+
+            <!-- CALL 1930 -->
+
+            <a href="tel:1930"
+               class="btn btn-danger">
+
+                📞 Call 1930
+
+            </a>
+
+
+            <!-- REPORT THROUGH CYBERRAKSHA -->
+
+            <a href="/report"
+               class="btn btn-primary">
+
+                🌐 Report Online
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- POLICE READY SUMMARY -->
+
+    <section class="summary-prompt">
+
+        <div>
+
+            <div class="section-icon">
+                📝
+            </div>
+
+            <div>
+
+                <h2>
+                    Police-Ready Summary
+                </h2>
+
+                <p>
+                    Prepare a structured summary of your
+                    incident before reporting it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn btn-secondary"
+            onclick="createSummary('{{ crime_type }}')">
+
+            Create Summary
+
+        </button>
+
+    </section>
+
+
+    <!-- SUMMARY RESULT -->
+
+    <div id="summaryBox"
+         class="summary-box"
+         style="display:none;">
+
+        <h2>
+            Your Incident Summary
+        </h2>
+
+        <textarea
+            id="summaryText"
+            readonly>
+        </textarea>
+
+    </div>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}">
+</script>
+
+</body>
+
+</html>

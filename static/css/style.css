@@ -1,0 +1,782 @@
+/* =====================================================
+   CYBERRAKSHA AI - COMPLETE STYLES
+   Homepage + Crime Pages
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06111a;
+    color: #f4f7fb;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 94px;
+    padding: 18px 6.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(5,16,25,0.96);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,200,255,0.35);
+    border-radius: 17px;
+    background: rgba(0,200,255,0.06);
+    font-size: 27px;
+}
+
+.brand strong {
+    display: block;
+    font-size: 22px;
+    color: #f4f7fb;
+}
+
+.brand strong span {
+    color: #00c8ff;
+}
+
+.brand small {
+    display: block;
+    margin-top: 2px;
+    color: #728295;
+    font-size: 13px;
+}
+
+.home-link {
+    color: #8fa0b2;
+    transition: 0.2s;
+}
+
+.home-link:hover {
+    color: #00c8ff;
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.language-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.language-box label {
+    color: #778799;
+}
+
+.language-box select {
+    padding: 13px 38px 13px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    background: #0d1b27;
+    color: #f4f7fb;
+    font-size: 15px;
+    outline: none;
+}
+
+
+/* =====================================================
+   HOMEPAGE
+===================================================== */
+
+.hero {
+    width: min(1370px, 87%);
+    margin: 0 auto;
+    padding: 25px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 550px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 17px;
+    border: 1px solid rgba(0,200,255,0.35);
+    border-radius: 30px;
+    background: rgba(0,200,255,0.06);
+    color: #00c8ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.hero h1 {
+    margin-top: 38px;
+    max-width: 850px;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #00c8ff;
+}
+
+.hero-description {
+    max-width: 820px;
+    margin-top: 28px;
+    color: #9eafc1;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    padding: 0 30px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.primary-button {
+    border: 1px solid #00c8ff;
+    background: #00c8ff;
+    color: #031017;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0,200,255,0.2);
+}
+
+.secondary-button {
+    border: 1px solid rgba(255,93,103,0.45);
+    background: rgba(255,93,103,0.05);
+    color: #ff737c;
+}
+
+.secondary-button:hover {
+    background: rgba(255,93,103,0.12);
+}
+
+
+/* =====================================================
+   EMERGENCY CARD
+===================================================== */
+
+.emergency-card {
+    padding: 38px;
+    border: 1px solid rgba(255,93,103,0.25);
+    border-radius: 26px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,39,51,0.9),
+            rgba(11,24,34,0.95)
+        );
+    box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+}
+
+.emergency-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.shield-box {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255,93,103,0.1);
+    font-size: 32px;
+}
+
+.available {
+    color: #35d39a;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.emergency-card .label {
+    color: #ff6872;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.emergency-card h2 {
+    margin-top: 15px;
+    font-size: 31px;
+    line-height: 1.15;
+}
+
+.emergency-card p {
+    margin-top: 20px;
+    color: #9eafc1;
+    line-height: 1.8;
+}
+
+.emergency-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 64px;
+    margin-top: 28px;
+    border-radius: 13px;
+    background: #ff5d67;
+    color: white;
+    font-weight: 800;
+}
+
+.emergency-call:hover {
+    background: #ff6d76;
+}
+
+.emergency-number {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    color: #778799;
+    font-size: 14px;
+}
+
+.emergency-number strong {
+    color: #f4f7fb;
+}
+
+
+/* =====================================================
+   INCIDENT SECTION
+===================================================== */
+
+.incidents {
+    width: min(1370px, 87%);
+    margin: 0 auto;
+    padding: 30px 0 90px;
+}
+
+.section-label {
+    color: #00c8ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-title {
+    margin-top: 8px;
+    font-size: 38px;
+}
+
+.section-description {
+    margin-top: 8px;
+    color: #7f8d9d;
+}
+
+.crime-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.crime-card {
+    min-height: 230px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 19px;
+    background: #0b1924;
+    transition: 0.25s;
+}
+
+.crime-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,200,255,0.3);
+    background: #0e202d;
+}
+
+.crime-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(0,200,255,0.08);
+    font-size: 24px;
+}
+
+.crime-card h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.crime-card p {
+    margin-top: 9px;
+    color: #8292a4;
+    line-height: 1.6;
+}
+
+.crime-arrow {
+    display: block;
+    margin-top: 20px;
+    color: #00c8ff;
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how-it-works {
+    width: min(1370px, 87%);
+    margin: 0 auto;
+    padding: 40px 0 90px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.step {
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    background: #0a1722;
+}
+
+.step-number {
+    color: #00c8ff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.step h3 {
+    margin-top: 15px;
+}
+
+.step p {
+    margin-top: 8px;
+    color: #7f8d9d;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 35px 6.5%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #69798a;
+    text-align: center;
+}
+
+
+/* =====================================================
+   CRIME PAGE
+===================================================== */
+
+.crime-page {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 50px 0 80px;
+}
+
+.crime-header {
+    margin: 30px 0 45px;
+}
+
+.crime-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0,200,255,0.35);
+    border-radius: 30px;
+    color: #00c8ff;
+    background: rgba(0,200,255,0.06);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.crime-header h1 {
+    margin: 0 0 12px;
+    color: #f4f7fb;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.1;
+}
+
+.crime-header p {
+    max-width: 800px;
+    margin: 0;
+    color: #a8b5c4;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.back-link {
+    color: #8fa0b2;
+}
+
+.back-link:hover {
+    color: #00c8ff;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: rgba(0,200,255,0.08);
+    font-size: 21px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+    color: #f4f7fb;
+    font-size: 28px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #778799;
+}
+
+.crime-section {
+    margin-bottom: 50px;
+}
+
+.guidance-list {
+    display: grid;
+    gap: 14px;
+}
+
+.guidance-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    background: rgba(14,27,39,0.75);
+}
+
+.guidance-number {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(0,200,255,0.1);
+    color: #00c8ff;
+    font-weight: 800;
+}
+
+.guidance-content p {
+    margin: 0;
+    color: #d9e1e9;
+    line-height: 1.6;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.evidence-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    background: rgba(14,27,39,0.7);
+    color: #d9e1e9;
+}
+
+.check-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(53,211,154,0.1);
+    color: #35d39a;
+    font-weight: 800;
+}
+
+.emergency-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 28px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(255,93,103,0.2);
+    border-radius: 18px;
+    background: rgba(255,93,103,0.05);
+}
+
+.emergency-label {
+    color: #ff7b83;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.emergency-action h2 {
+    margin: 8px 0;
+    color: #f4f7fb;
+}
+
+.emergency-action p {
+    max-width: 650px;
+    margin: 0;
+    color: #9ca8b7;
+    line-height: 1.6;
+}
+
+.emergency-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: #ff5d67;
+    color: white;
+}
+
+.btn-primary {
+    background: #00c8ff;
+    color: #031017;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    color: #dce4ed;
+}
+
+.summary-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px;
+    border: 1px solid rgba(0,200,255,0.15);
+    border-radius: 18px;
+    background: rgba(0,200,255,0.04);
+}
+
+.summary-prompt > div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.summary-prompt h2 {
+    margin: 0 0 5px;
+    color: #f4f7fb;
+}
+
+.summary-prompt p {
+    margin: 0;
+    color: #7f8d9d;
+}
+
+.summary-box {
+    margin-top: 25px;
+    padding: 25px;
+    border: 1px solid rgba(0,200,255,0.2);
+    border-radius: 18px;
+    background: rgba(10,22,32,0.9);
+}
+
+.summary-box h2 {
+    color: #f4f7fb;
+}
+
+.summary-box textarea {
+    width: 100%;
+    min-height: 350px;
+    box-sizing: border-box;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    background: #07131d;
+    color: #dce4ed;
+    font-family: monospace;
+    line-height: 1.6;
+    resize: vertical;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .crime-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .brand small {
+        display: none;
+    }
+
+    .hero,
+    .incidents,
+    .how-it-works {
+        width: calc(100% - 28px);
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .crime-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .crime-page {
+        width: calc(100% - 28px);
+        padding-top: 35px;
+    }
+
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-action,
+    .summary-prompt {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .emergency-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .emergency-buttons .btn {
+        width: 100%;
+    }
+}

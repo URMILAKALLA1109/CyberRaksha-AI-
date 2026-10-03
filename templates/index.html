@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberRaksha AI | Cyber Emergency Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="/" class="brand">
+
+            <div class="brand-icon">
+                🛡️
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    CyberRaksha <span>AI</span>
+                </strong>
+
+                <small>
+                    Cyber Emergency Assistant
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-right">
+
+            <span class="language-label">
+                Language
+            </span>
+
+            <select id="language"
+                    class="language-select">
+
+                <option value="en-IN">
+                    English
+                </option>
+
+                <option value="te-IN">
+                    తెలుగు
+                </option>
+
+                <option value="hi-IN">
+                    हिन्दी
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="hero-content">
+
+
+            <div class="status-badge">
+
+                <span class="status-dot"></span>
+
+                CYBER SAFETY ASSISTANT
+
+            </div>
+
+
+
+            <h1>
+
+                Something happened online?
+
+                <span>
+                    We help you respond.
+                </span>
+
+            </h1>
+
+
+
+            <p class="hero-description">
+
+                Get immediate guidance, preserve the right evidence,
+                prepare a police-ready summary, and reach official
+                cybercrime reporting channels.
+
+            </p>
+
+
+
+            <!-- ================= INCIDENT INPUT ================= -->
+
+            <div class="incident-input-box">
+
+                <h3>
+                    🛡️ Tell Us What Happened
+                </h3>
+
+                <p>
+                    Describe your cyber problem by typing or speaking.
+                </p>
+
+
+                <textarea
+                    id="incidentInput"
+                    rows="5"
+                    placeholder="Example: Someone called me pretending to be a police officer and asked me to transfer money..."></textarea>
+
+
+                <div class="incident-input-actions">
+
+
+                    <button
+                        type="button"
+                        class="voice-input-btn"
+                        onclick="startVoice()">
+
+                        🎙️ Speak
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="analyze-btn"
+                        onclick="analyzeTypedIncident()">
+
+                        🔍 Analyze Incident
+
+                    </button>
+
+
+                </div>
+
+
+                <div
+                    id="voiceStatus"
+                    class="voice-status">
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- HERO ACTIONS -->
+
+            <div class="hero-actions">
+
+
+                <a
+                    href="tel:1930"
+                    class="emergency-btn">
+
+                    <span>📞</span>
+
+                    Call 1930
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="hero-note">
+
+                <span>⚡</span>
+
+                First 5 minutes can matter.
+                Stay calm and follow the steps.
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= RIGHT EMERGENCY PANEL ================= -->
+
+        <div class="emergency-card">
+
+
+            <div class="emergency-top">
+
+
+                <div class="shield-circle">
+                    🛡️
+                </div>
+
+
+                <span class="live-status">
+                    ● AVAILABLE
+                </span>
+
+
+            </div>
+
+
+
+            <span class="card-label">
+                CYBER EMERGENCY
+            </span>
+
+
+
+            <h2>
+                Need Immediate Help?
+            </h2>
+
+
+
+            <p>
+
+                If you have experienced a cybercrime,
+                preserve evidence and take the appropriate
+                immediate action.
+
+            </p>
+
+
+
+            <a
+                href="tel:1930"
+                class="call-btn">
+
+                📞
+                Call Cybercrime Helpline
+
+            </a>
+
+
+
+            <div class="helpline-info">
+
+                <span>
+                    Emergency Helpline
+                </span>
+
+                <strong>
+                    1930
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= INCIDENTS ================= -->
+
+<section class="crime-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+
+            <div>
+
+                <span class="section-label">
+                    CYBER INCIDENTS
+                </span>
+
+
+                <h2>
+                    What happened to you?
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Select the situation that matches your problem.
+                We'll guide you through the next steps.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="crime-grid">
+
+
+            <!-- 1 -->
+
+            <a
+                href="/crime/financial-fraud"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    💳
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Financial Fraud
+                    </h3>
+
+                    <p>
+                        Money stolen through UPI, bank transfer,
+                        card or online payment.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 2 -->
+
+            <a
+                href="/crime/digital-arrest"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    🚨
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Digital Arrest
+                    </h3>
+
+                    <p>
+                        Fake police, CBI, court or government
+                        officials threatening you online.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 3 -->
+
+            <a
+                href="/crime/phishing"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    🎣
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Phishing / Fake Link
+                    </h3>
+
+                    <p>
+                        Suspicious links, fake websites,
+                        OTP or credential theft.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 4 -->
+
+            <a
+                href="/crime/account-hacking"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    🔐
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Account Hacking
+                    </h3>
+
+                    <p>
+                        Your email, social media or online
+                        account has been compromised.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 5 -->
+
+            <a
+                href="/crime/malware"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    🦠
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Malware Attack
+                    </h3>
+
+                    <p>
+                        Suspicious APKs, spyware, software
+                        or malicious files affecting your device.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 6 -->
+
+            <a
+                href="/crime/sim-fraud"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    📱
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        SIM / Mobile Fraud
+                    </h3>
+
+                    <p>
+                        SIM replacement, mobile takeover
+                        or suspicious telecom activity.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 7 -->
+
+            <a
+                href="/crime/social-media"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    🌐
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Social Media Crime
+                    </h3>
+
+                    <p>
+                        Fake profiles, impersonation,
+                        harassment or social media abuse.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 8 -->
+
+            <a
+                href="/crime/online-blackmail"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    ⚠️
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Online Blackmail
+                    </h3>
+
+                    <p>
+                        Threats, intimate-image abuse,
+                        extortion or online harassment.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 9 -->
+
+            <a
+                href="/crime/crypto-fraud"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    ₿
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Crypto Fraud
+                    </h3>
+
+                    <p>
+                        Cryptocurrency scams, fake investments
+                        or wallet-related fraud.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+
+            <!-- 10 -->
+
+            <a
+                href="/crime/email-fraud"
+                class="crime-card">
+
+
+                <div class="crime-icon">
+                    📧
+                </div>
+
+
+                <div class="crime-info">
+
+                    <h3>
+                        Email Fraud
+                    </h3>
+
+                    <p>
+                        Fake emails, impersonation, phishing
+                        or email account compromise.
+                    </p>
+
+                </div>
+
+
+                <span class="arrow">
+                    →
+                </span>
+
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading center">
+
+
+            <span class="section-label">
+                HOW CYBERRAKSHA WORKS
+            </span>
+
+
+            <h2>
+                From confusion to action.
+            </h2>
+
+
+            <p>
+
+                A simple four-step process designed to help
+                citizens respond after a cyber incident.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Tell Us
+                </h3>
+
+
+                <p>
+
+                    Type or speak what happened
+                    in your own language.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Get Guidance
+                </h3>
+
+
+                <p>
+
+                    Receive immediate actions
+                    relevant to the incident.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Preserve Evidence
+                </h3>
+
+
+                <p>
+
+                    Get a checklist of screenshots,
+                    transaction IDs, calls and messages.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+
+                <h3>
+                    Prepare & Report
+                </h3>
+
+
+                <p>
+
+                    Organize the incident clearly and
+                    access official reporting channels.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TRUST / NOTICE ================= -->
+
+<section class="notice-section">
+
+    <div class="section-container">
+
+
+        <div class="notice-card">
+
+
+            <div class="notice-icon">
+                ℹ️
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Important
+                </h3>
+
+
+                <p>
+
+                    CyberRaksha AI is a citizen-support prototype.
+                    It helps organize information and provides
+                    guidance. For official complaints and reporting,
+                    always use authorized government channels.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="section-container">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+                🛡️ CyberRaksha AI
+            </div>
+
+
+            <p>
+                Cyber Emergency Assistant
+            </p>
+
+
+            <span>
+                Hackathon Prototype • Citizen Cyber Safety
+            </span>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+</body>
+
+</html>
